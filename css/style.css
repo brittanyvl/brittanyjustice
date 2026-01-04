@@ -1129,8 +1129,8 @@ img { max-width: 100%; display: block; }
 }
 
 .screenshot-image-mobile {
-    width: 50%;
-    max-width: 300px;
+    width: auto;
+    max-width: 200px;
     height: auto;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-neutral-200);
