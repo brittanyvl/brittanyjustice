@@ -650,12 +650,15 @@ img { max-width: 100%; display: block; }
 }
 
 .case-study-section h3 {
-    font-size: var(--text-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-primary-600);
-    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-neutral-900);
+    margin-bottom: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+.case-study-section:first-of-type h3 {
+    margin-top: 0;
 }
 
 .case-study-section p {

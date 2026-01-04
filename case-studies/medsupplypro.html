@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Brittany Justice</a>
+            <a href="../index.html" class="nav-logo">Brittany Justice</a>
             <ul class="nav-menu">
                 <li><a href="../about.html" class="nav-link">About</a></li>
             </ul>
@@ -37,7 +37,7 @@
 
         <section class="case-study-page">
             <div class="container">
-                <a href="/#case-studies" class="back-link">Back to Case Studies</a>
+                <a href="../index.html#case-studies" class="back-link">Back to Case Studies</a>
 
                 <p class="tagline">
                 A privacy-first, offline Android application for medical inventory tracking built for solo providers and mobile practices.
@@ -47,13 +47,13 @@
                 <div class="case-study-section">
                 <h3>Overview</h3>
                 <p>
-                    MedSupplyPro is a lightweight Android application designed to help solo healthcare providers manage medical
+                    MedSupplyPro is a <strong>lightweight Android application</strong> designed to help solo healthcare providers manage medical
                     inventory without the overhead of cloud systems, subscriptions, or complex enterprise software.
-                    It was built for practitioners such as RNs, NPs, PAs, chiropractors, and mobile IV operators who need
+                    It was built for practitioners such as <strong>RNs, NPs, PAs, chiropractors, and mobile IV operators</strong> who need
                     practical inventory tracking that works anywhere, even without an internet connection.
                 </p>
                 <p>
-                    The app runs entirely offline, stores all data locally on the device, and requires no accounts or logins.
+                    The app <strong>runs entirely offline</strong>, stores all data locally on the device, and requires <strong>no accounts or logins</strong>.
                     Its goal is to reduce operational friction while preserving privacy, simplicity, and control.
                 </p>
                 </div>
@@ -62,12 +62,12 @@
                 <div class="case-study-section">
                 <h3>Context / Risk</h3>
                 <p>
-                    Many small healthcare practices still rely on spreadsheets, paper logs, or ad hoc systems to manage medical
+                    Many small healthcare practices still rely on <strong>spreadsheets, paper logs, or ad hoc systems</strong> to manage medical
                     supplies. These approaches are error-prone and make it difficult to answer basic operational questions:
                     what is in stock, where it is stored, what is expiring, and what is being wasted.
                 </p>
                 <p>
-                    Cloud-based inventory platforms often introduce new problems for small operators: recurring costs,
+                    <strong>Cloud-based inventory platforms</strong> often introduce new problems for small operators: recurring costs,
                     account management, internet dependency, and uncertainty about how sensitive data is stored or shared.
                     For mobile practices and solo providers, those tradeoffs are often unacceptable.
                 </p>
@@ -77,14 +77,14 @@
                 <div class="case-study-section">
                 <h3>The Problem</h3>
                 <p>
-                    Solo providers need inventory visibility without enterprise complexity. Specifically, they need a system that:
+                    Solo providers need <strong>inventory visibility without enterprise complexity</strong>. Specifically, they need a system that:
                 </p>
                 <ul>
-                    <li>Works offline in mobile or low-connectivity environments</li>
-                    <li>Does not require logins, accounts, or subscriptions</li>
-                    <li>Keeps all data private and under the provider's control</li>
-                    <li>Is simple enough to use daily without training</li>
-                    <li>Supports basic reporting on usage, waste, and inventory value</li>
+                    <li><strong>Works offline</strong> in mobile or low-connectivity environments</li>
+                    <li><strong>Does not require logins</strong>, accounts, or subscriptions</li>
+                    <li>Keeps <strong>all data private</strong> and under the provider's control</li>
+                    <li>Is <strong>simple enough</strong> to use daily without training</li>
+                    <li>Supports <strong>basic reporting</strong> on usage, waste, and inventory value</li>
                 </ul>
                 <p>
                     Existing tools typically optimize for large organizations, not for individual practitioners running lean operations.
@@ -95,12 +95,12 @@
                 <div class="case-study-section">
                 <h3>Why Existing Approaches Failed</h3>
                 <p>
-                    Spreadsheets and pen-and-paper logs are flexible but fragile: they drift out of date, are hard to search,
-                    and provide little insight into waste or usage patterns. On the other end of the spectrum, cloud-based
-                    inventory systems impose cost, connectivity, and data-sharing requirements that many solo providers do not want.
+                    <strong>Spreadsheets and pen-and-paper logs</strong> are flexible but fragile: they drift out of date, are hard to search,
+                    and provide little insight into waste or usage patterns. On the other end of the spectrum, <strong>cloud-based
+                    inventory systems</strong> impose cost, connectivity, and data-sharing requirements that many solo providers do not want.
                 </p>
                 <p>
-                    MedSupplyPro was designed to sit deliberately between those extremes: more structured and reliable than a spreadsheet,
+                    MedSupplyPro was designed to sit <strong>deliberately between those extremes</strong>: more structured and reliable than a spreadsheet,
                     but far simpler and more private than enterprise SaaS tools.
                 </p>
                 </div>
@@ -109,8 +109,8 @@
                 <div class="case-study-section">
                 <h3>System Design</h3>
                 <p>
-                    MedSupplyPro is a native Android application built with a focus on durability, simplicity, and offline-first behavior.
-                    All application logic and data storage live on the device, with no external network dependencies.
+                    MedSupplyPro is a <strong>native Android application</strong> built with a focus on durability, simplicity, and offline-first behavior.
+                    All application logic and data storage live on the device, with <strong>no external network dependencies</strong>.
                 </p>
 
                 <h4>Design Principles</h4>
@@ -123,12 +123,12 @@
 
                 <h4>Data Model & Workflow</h4>
                 <ul>
-                    <li>Catalog of drugs and medical supplies</li>
-                    <li>Custom locations and storage areas</li>
-                    <li>Shipments as the unit of inventory intake</li>
-                    <li>Generated inventory records tied to shipments</li>
-                    <li>Explicit logging of usage and waste</li>
-                    <li>Reporting views summarizing inventory value and waste</li>
+                    <li><strong>Catalog</strong> of drugs and medical supplies</li>
+                    <li><strong>Custom locations</strong> and storage areas</li>
+                    <li><strong>Shipments</strong> as the unit of inventory intake</li>
+                    <li><strong>Generated inventory records</strong> tied to shipments</li>
+                    <li><strong>Explicit logging</strong> of usage and waste</li>
+                    <li><strong>Reporting views</strong> summarizing inventory value and waste</li>
                 </ul>
                 </div>
 
@@ -152,7 +152,9 @@
                     These placeholders represent the primary user-facing screens of the MedSupplyPro application.
                 </p>
 
+                <!-- SCREENSHOT: App Home -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">App Home / Inventory Overview</span>
                     </div>
@@ -161,7 +163,9 @@
                     </p>
                 </div>
 
+                <!-- SCREENSHOT: Catalog Management -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">Catalog Management</span>
                     </div>
@@ -170,7 +174,9 @@
                     </p>
                 </div>
 
+                <!-- SCREENSHOT: Shipment Intake -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">Shipment Intake</span>
                     </div>
@@ -179,7 +185,9 @@
                     </p>
                 </div>
 
+                <!-- SCREENSHOT: Waste & Usage -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">Waste & Usage Reporting</span>
                     </div>
@@ -204,13 +212,13 @@
                 <div class="case-study-section">
                 <h3>Who This Was For</h3>
                 <p>
-                    MedSupplyPro was built for independent healthcare operators who manage their own supplies, including:
+                    MedSupplyPro was built for <strong>independent healthcare operators</strong> who manage their own supplies, including:
                 </p>
                 <ul>
-                    <li>Mobile IV therapy providers</li>
-                    <li>Med spa owners</li>
-                    <li>Solo or small-group clinics</li>
-                    <li>Nurse-led and provider-owned practices</li>
+                    <li><strong>Mobile IV therapy providers</strong></li>
+                    <li><strong>Med spa owners</strong></li>
+                    <li><strong>Solo or small-group clinics</strong></li>
+                    <li><strong>Nurse-led and provider-owned practices</strong></li>
                 </ul>
                 </div>
 
@@ -218,10 +226,10 @@
                 <div class="case-study-section">
                 <h3>Roadmap</h3>
                 <ul>
-                    <li>Export to Excel for reporting and backup</li>
-                    <li>Enhanced analytics and summaries</li>
-                    <li>Expiration and BUD alerts</li>
-                    <li>Barcode scanning for faster lookup</li>
+                    <li><strong>Export to Excel</strong> for reporting and backup</li>
+                    <li><strong>Enhanced analytics</strong> and summaries</li>
+                    <li><strong>Expiration and BUD alerts</strong></li>
+                    <li><strong>Barcode scanning</strong> for faster lookup</li>
                 </ul>
                 </div>
 
@@ -229,7 +237,7 @@
                 <div class="case-study-section">
                 <h3>Technical Notes</h3>
                 <p>
-                    MedSupplyPro was developed as a capstone project and implemented as a native Android application with no third-party services.
+                    MedSupplyPro was developed as a <strong>capstone project</strong> and implemented as a native Android application with <strong>no third-party services</strong>.
                 </p>
                 <ul>
                     <li><strong>Platform:</strong> Android (API 26+)</li>
@@ -240,8 +248,8 @@
                     <li><strong>Privacy:</strong> no analytics, no logins, no network calls</li>
                 </ul>
                 <p>
-                    The application includes clear user-facing disclaimers and was intentionally designed to remain simple, transparent,
-                    and maintainable.
+                    The application includes clear user-facing disclaimers and was intentionally designed to remain <strong>simple, transparent,
+                    and maintainable</strong>.
                 </p>
                 </div>
 

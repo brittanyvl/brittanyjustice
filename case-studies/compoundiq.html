@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Brittany Justice</a>
+            <a href="../index.html" class="nav-logo">Brittany Justice</a>
             <ul class="nav-menu">
                 <li><a href="../about.html" class="nav-link">About</a></li>
             </ul>
@@ -37,7 +37,7 @@
 
         <section class="case-study-page">
             <div class="container">
-                <a href="/#case-studies" class="back-link">Back to Case Studies</a>
+                <a href="../index.html#case-studies" class="back-link">Back to Case Studies</a>
 
                 <p class="tagline">
                 503B facility lifecycle tracking from a single FDA spreadsheet, modeled into history you can monitor, query, and trust.
@@ -47,13 +47,13 @@
                 <div class="case-study-section">
                 <h3>Overview</h3>
                 <p>
-                    CompoundIQ is a regulatory intelligence platform that transforms the FDA's weekly 503B outsourcing facility
-                    registration spreadsheet into a longitudinal data model. While the FDA publishes only a static, point-in-time
-                    Excel file, CompoundIQ captures each release, preserves history, and models facilities, parent pharmacies,
-                    inspections, regulatory actions, bulk API intent, recalls, and registration status over time.
+                    CompoundIQ is a <strong>regulatory intelligence platform</strong> that transforms the FDA's weekly 503B outsourcing facility
+                    registration spreadsheet into a <strong>longitudinal data model</strong>. While the FDA publishes only a static, point-in-time
+                    Excel file, CompoundIQ captures each release, preserves history, and models <strong>facilities, parent pharmacies,
+                    inspections, regulatory actions, bulk API intent, recalls, and registration status</strong> over time.
                 </p>
                 <p>
-                    The result is a system that makes change visible where none existed before — enabling monitoring, trend analysis,
+                    The result is a system that <strong>makes change visible</strong> where none existed before — enabling monitoring, trend analysis,
                     and defensible decision-making in a highly regulated pharmacy market.
                 </p>
                 </div>
@@ -62,13 +62,13 @@
                 <div class="case-study-section">
                 <h3>Context / Risk</h3>
                 <p>
-                    FDA 503B outsourcing facilities play a critical role in the sterile drug supply chain, especially during shortages.
-                    Health systems, clinics, telehealth organizations, and GPOs rely on these facilities, yet the regulatory signals
-                    that indicate supplier risk are fragmented and difficult to interpret.
+                    <strong>FDA 503B outsourcing facilities</strong> play a critical role in the sterile drug supply chain, especially during shortages.
+                    Health systems, clinics, telehealth organizations, and GPOs rely on these facilities, yet the <strong>regulatory signals
+                    that indicate supplier risk</strong> are fragmented and difficult to interpret.
                 </p>
                 <p>
-                    The FDA's 503B registration list represents the authoritative public record, but it is not designed for operational
-                    or strategic use. Each weekly update overwrites the past, eliminating the ability to answer basic questions about
+                    The FDA's 503B registration list represents the authoritative public record, but it is <strong>not designed for operational
+                    or strategic use</strong>. Each weekly update overwrites the past, eliminating the ability to answer basic questions about
                     how the supplier landscape evolves over time.
                 </p>
                 </div>
@@ -77,14 +77,14 @@
                 <div class="case-study-section">
                 <h3>The Problem</h3>
                 <p>
-                    The core challenge was not visualization — it was the absence of time and identity in the source data.
+                    The core challenge was not visualization — it was the <strong>absence of time and identity</strong> in the source data.
                 </p>
                 <ul>
-                    <li>Data is released as a raw Excel spreadsheet with inconsistent formatting.</li>
-                    <li>Weekly updates overwrite prior states, eliminating historical context.</li>
-                    <li>Facilities and parent pharmacies lack stable identifiers.</li>
-                    <li>Names and attributes shift subtly across releases.</li>
-                    <li>Inspections, post-inspection actions, and recalls are not modeled as time-aware events.</li>
+                    <li>Data is released as a <strong>raw Excel spreadsheet</strong> with inconsistent formatting.</li>
+                    <li>Weekly updates <strong>overwrite prior states</strong>, eliminating historical context.</li>
+                    <li>Facilities and parent pharmacies <strong>lack stable identifiers</strong>.</li>
+                    <li>Names and attributes <strong>shift subtly</strong> across releases.</li>
+                    <li>Inspections, post-inspection actions, and recalls are <strong>not modeled as time-aware events</strong>.</li>
                 </ul>
                 <p>
                     Without re-engineering the dataset, longitudinal monitoring and reliable analytics are not possible.
@@ -95,13 +95,13 @@
                 <div class="case-study-section">
                 <h3>Why Existing Approaches Failed</h3>
                 <p>
-                    In practice, teams attempt to manage this data through manual spreadsheet comparisons or snapshot-based BI tools.
+                    In practice, teams attempt to manage this data through <strong>manual spreadsheet comparisons</strong> or snapshot-based BI tools.
                     These approaches fail quickly:
                 </p>
                 <ul>
-                    <li>Manual comparisons do not scale and are not auditable.</li>
-                    <li>Snapshot dashboards show "today" but cannot explain "what changed."</li>
-                    <li>Without stable entity resolution, facility history becomes unreliable.</li>
+                    <li>Manual comparisons <strong>do not scale</strong> and are not auditable.</li>
+                    <li>Snapshot dashboards show "today" but <strong>cannot explain "what changed."</strong></li>
+                    <li>Without stable entity resolution, <strong>facility history becomes unreliable</strong>.</li>
                 </ul>
                 <p>
                     CompoundIQ was designed to solve what was missing: <strong>time, identity, and structure</strong>.
@@ -112,36 +112,36 @@
                 <div class="case-study-section">
                 <h3>System Design</h3>
                 <p>
-                    CompoundIQ treats each FDA release as a point-in-time observation rather than a replacement. Weekly spreadsheets
-                    are automatically collected, normalized, and preserved as history using Slowly Changing Dimensions (Type 2).
+                    CompoundIQ treats each FDA release as a <strong>point-in-time observation</strong> rather than a replacement. Weekly spreadsheets
+                    are automatically collected, normalized, and preserved as history using <strong>Slowly Changing Dimensions (Type 2)</strong>.
                 </p>
 
                 <h4>What the System Models</h4>
                 <ul>
-                    <li>Facilities and parent pharmacies</li>
-                    <li>Registration status over time (added, removed, re-registered)</li>
-                    <li>Inspection events and inspection cadence</li>
-                    <li>Post-inspection actions (Untitled Letters, FMD-145 notices, Warning Letters)</li>
-                    <li>Intent to compound sterile drugs from bulk APIs</li>
-                    <li>Facilities associated with FDA recalls</li>
-                    <li>High-level KPIs summarizing activity and change</li>
+                    <li><strong>Facilities and parent pharmacies</strong></li>
+                    <li><strong>Registration status over time</strong> (added, removed, re-registered)</li>
+                    <li><strong>Inspection events</strong> and inspection cadence</li>
+                    <li><strong>Post-inspection actions</strong> (Untitled Letters, FMD-145 notices, Warning Letters)</li>
+                    <li><strong>Bulk API compounding intent</strong></li>
+                    <li><strong>FDA recall associations</strong></li>
+                    <li><strong>High-level KPIs</strong> summarizing activity and change</li>
                 </ul>
 
                 <h4>Entity Resolution</h4>
                 <p>
-                    The FDA source data contains significant text inconsistencies. CompoundIQ applies aggressive normalization and
-                    deterministic ID generation to ensure that the same real-world facility remains identifiable across time.
+                    The FDA source data contains significant text inconsistencies. CompoundIQ applies <strong>aggressive normalization</strong> and
+                    <strong>deterministic ID generation</strong> to ensure that the same real-world facility remains identifiable across time.
                 </p>
                 <ul>
                     <li>Standardization of casing, punctuation, spacing, and corporate suffixes</li>
-                    <li>Stable facility and parent IDs generated via deterministic hashing</li>
+                    <li><strong>Stable facility and parent IDs</strong> generated via deterministic hashing</li>
                     <li>Explicit handling of edge cases such as "AMERICA LLC" vs "AMERICALLC"</li>
                 </ul>
 
                 <h4>Data Quality & Observability</h4>
                 <ul>
-                    <li>37 automated dbt tests validating schema integrity and relationships</li>
-                    <li>Freshness monitoring to ensure weekly captures are complete</li>
+                    <li><strong>37 automated dbt tests</strong> validating schema integrity and relationships</li>
+                    <li><strong>Freshness monitoring</strong> to ensure weekly captures are complete</li>
                     <li>Administrative interface for pipeline monitoring and debugging</li>
                 </ul>
                 </div>
@@ -154,7 +154,9 @@
                     FDA's 503B data.
                 </p>
 
+                <!-- SCREENSHOT: KPI Overview & Site Header -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">KPI Overview & Site Header</span>
                     </div>
@@ -164,7 +166,9 @@
                     </p>
                 </div>
 
+                <!-- SCREENSHOT: Weekly Change Monitoring -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">Weekly Change Monitoring</span>
                     </div>
@@ -174,7 +178,9 @@
                     </p>
                 </div>
 
+                <!-- SCREENSHOT: Post-Inspection Actions -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">Post-Inspection Actions</span>
                     </div>
@@ -184,7 +190,9 @@
                     </p>
                 </div>
 
+                <!-- SCREENSHOT: Interactive Registration Table -->
                 <div class="screenshot-block">
+                    <!-- TODO: Add screenshot image here -->
                     <div class="screenshot-placeholder">
                     <span class="placeholder-label">Interactive Registration Table</span>
                     </div>
@@ -199,12 +207,12 @@
                 <div class="case-study-section">
                 <h3>Decisions Enabled</h3>
                 <ul>
-                    <li>Identify facilities entering or exiting the 503B landscape</li>
-                    <li>Track inspection cadence and outcomes over time</li>
-                    <li>Monitor accumulation of post-inspection actions</li>
-                    <li>Understand shifts in bulk API compounding intent</li>
-                    <li>Surface recall-associated facilities</li>
-                    <li>Support sourcing and risk discussions with historical evidence</li>
+                    <li><strong>Identify facilities entering or exiting</strong> the 503B landscape</li>
+                    <li><strong>Track inspection cadence</strong> and outcomes over time</li>
+                    <li><strong>Monitor post-inspection actions</strong> accumulation</li>
+                    <li><strong>Understand shifts</strong> in bulk API compounding intent</li>
+                    <li><strong>Surface recall-associated facilities</strong></li>
+                    <li><strong>Support sourcing and risk discussions</strong> with historical evidence</li>
                 </ul>
                 </div>
 
@@ -212,7 +220,7 @@
                 <div class="case-study-section">
                 <h3>Who This Was For</h3>
                 <p>
-                    Pharmacy procurement leaders, supply chain analytics teams, and GPO stakeholders who depend on 503B outsourcing
+                    <strong>Pharmacy procurement leaders</strong>, <strong>supply chain analytics teams</strong>, and <strong>GPO stakeholders</strong> who depend on 503B outsourcing
                     facilities and need a reliable view of how the supplier landscape changes over time.
                 </p>
                 </div>
@@ -221,8 +229,8 @@
                 <div class="case-study-section">
                 <h3>Why This Matters</h3>
                 <p>
-                    The FDA spreadsheet is public, but history is not. CompoundIQ creates the missing layer by transforming a static
-                    disclosure into a durable, time-aware model of reality. It demonstrates how messy, stateless regulatory data can
+                    The FDA spreadsheet is public, but <strong>history is not</strong>. CompoundIQ creates the missing layer by transforming a static
+                    disclosure into a <strong>durable, time-aware model of reality</strong>. It demonstrates how messy, stateless regulatory data can
                     be re-engineered into structured facts and dimensions that support real decisions in a complex healthcare market.
                 </p>
                 </div>
