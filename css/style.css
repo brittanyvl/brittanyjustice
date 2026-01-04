@@ -1128,6 +1128,15 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+.screenshot-image-mobile {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-neutral-200);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
 /* Case study section heading improvements */
 .case-study-section h4 {
     font-size: var(--text-sm);
