@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CMS BCBS Oncology J-Code Payor Rate Pipeline - Turning CMS payor machine-readable files into analyzable pricing intelligence.">
+    <title>CMS BCBS Oncology J-Code Pipeline | Brittany Justice</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Brittany Justice</a>
+            <ul class="nav-menu">
+                <li><a href="../about.html" class="nav-link">About</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">CMS BCBS Oncology J-Code Payor Rate Pipeline</h1>
+                <p class="page-subtitle">Machine-Readable File Processing for Pricing Intelligence</p>
+            </div>
+        </section>
+
+        <section class="case-study-page">
+            <div class="container">
+                <a href="/#case-studies" class="back-link">Back to Case Studies</a>
+
+                <p class="tagline">
+                Turning CMS payor machine-readable files into analyzable pricing intelligence for the top oncology J-codes.
+                </p>
+
+                <!-- OVERVIEW -->
+                <div class="case-study-section">
+                <h3>Overview</h3>
+                <p>
+                    CMS requires payors to publish Machine Readable Files (MRFs) containing negotiated rates. In practice, these files are massive,
+                    fragmented across index manifests and in-network rate files, and difficult to use for any targeted analysis.
+                </p>
+                <p>
+                    In this project, I built a pipeline to collect and normalize negotiated rates for the <strong>top 50 oncology J-codes</strong> from a BCBS payor's CMS files,
+                    enabling analysis of how payment rates vary by billing code and provider reference across published plans.
+                </p>
+                </div>
+
+                <!-- CONTEXT / WHY IT MATTERS -->
+                <div class="case-study-section">
+                <h3>Context / Why It Matters</h3>
+                <p>
+                    Oncology drugs represent some of the highest-cost items in healthcare reimbursement. Small changes in negotiated rates can have outsized financial impact for
+                    providers, health systems, and risk-bearing entities. While MRFs theoretically improve transparency, the raw format is not decision-ready:
+                    it requires engineering work to extract, filter, and structure the rates before any pricing analysis is possible.
+                </p>
+                </div>
+
+                <!-- THE PROBLEM -->
+                <div class="case-study-section">
+                <h3>The Problem</h3>
+                <p>
+                    CMS MRF data is technically public, but operationally difficult:
+                </p>
+                <ul>
+                    <li><strong>Discovery friction:</strong> payors publish an <em>index JSON</em> that references many rate files per plan and market.</li>
+                    <li><strong>Scale:</strong> in-network files are extremely large JSON documents that can't be loaded into memory safely.</li>
+                    <li><strong>Nested structure:</strong> negotiated rates live in deeply nested arrays, and provider identities are separated into reference blocks.</li>
+                    <li><strong>Join complexity:</strong> rate entries often use <code>provider_reference</code> keys requiring separate provider-reference lookups.</li>
+                    <li><strong>Analysis readiness:</strong> without flattening, even simple questions like "what's the negotiated rate for JXXXX?" are hard to answer.</li>
+                </ul>
+                </div>
+
+                <!-- SOLUTION / APPROACH -->
+                <div class="case-study-section">
+                <h3>Solution</h3>
+                <p>
+                    I built a two-stage extraction pipeline that turns the payor's CMS artifacts into normalized tables suitable for analysis:
+                </p>
+
+                <h4>Stage 1: Index Manifest → File Inventory</h4>
+                <p>
+                    The index file contains a <code>reporting_structure</code> array mapping plans to in-network file locations. I flatten that structure into a tabular inventory
+                    so files can be selected, downloaded, and processed systematically.
+                </p>
+                <ul>
+                    <li>Extract reporting entity metadata</li>
+                    <li>Enumerate plans (name, market type, id type/id)</li>
+                    <li>Enumerate in-network file descriptors and URLs</li>
+                    <li>Write a clean index table for downstream processing</li>
+                </ul>
+
+                <h4>Stage 2: Streaming In-Network Rate Files → Flat Rate Rows</h4>
+                <p>
+                    In-network files are too large for typical JSON loading. I used <strong>streaming JSON parsing</strong> to safely process them in a memory-efficient way.
+                    The extraction focuses on the billing codes of interest (top oncology J-codes), and flattens the nested negotiated rates into row-level records.
+                </p>
+                <ul>
+                    <li>Stream <code>provider_references</code> to build a provider reference → NPI lookup</li>
+                    <li>Stream <code>in_network</code> entries to extract billing code and negotiated rates</li>
+                    <li>Output normalized rows: provider reference, billing code, negotiated rate</li>
+                    <li>Designed for joinability to provider NPIs and plan metadata</li>
+                </ul>
+                </div>
+
+                <!-- SYSTEM DESIGN / ENGINEERING HIGHLIGHTS -->
+                <div class="case-study-section">
+                <h3>Engineering Highlights</h3>
+                <ul>
+                    <li>
+                    <strong>Memory-safe processing:</strong> used <code>ijson</code> to stream and parse massive JSON files without loading them fully.
+                    </li>
+                    <li>
+                    <strong>Separation of concerns:</strong> manifest flattening (what files exist) is decoupled from rate extraction (what's inside each file).
+                    </li>
+                    <li>
+                    <strong>Join-ready outputs:</strong> structured outputs support downstream joins across entity → plan → provider → billing code.
+                    </li>
+                    <li>
+                    <strong>Extensible design:</strong> the same pipeline pattern can scale to more payors, more billing code sets, and richer negotiated rate attributes.
+                    </li>
+                </ul>
+                </div>
+
+                <!-- PRODUCT VIEWS / SCREENSHOTS -->
+                <div class="case-study-section">
+                <h3>Artifacts & Views</h3>
+                <p>
+                    These placeholders represent the core outputs and analysis views produced by the pipeline.
+                </p>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Index Inventory Table (Plans → In-Network File URLs)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Flattened index manifest showing reporting entity, plan metadata, market type, and in-network file locations used for automated selection and processing.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Flattened Rate Extract (Provider Reference + J-Code + Negotiated Rate)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Sample of normalized rows extracted via streaming parsing. Designed to be joined to provider NPIs and plan metadata for analysis.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Top 50 Oncology J-Code Rate Distribution (Chart)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Rate distribution analysis by J-code to illustrate variation and identify high-dispersion codes that may warrant deeper investigation.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Rate Comparison View (By Billing Code / Provider Reference)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Comparison view showing negotiated rates across provider references for a selected J-code (foundation for benchmarking and outlier detection).
+                    </p>
+                </div>
+                </div>
+
+                <!-- DECISIONS ENABLED -->
+                <div class="case-study-section">
+                <h3>Decisions Enabled</h3>
+                <ul>
+                    <li><strong>Pricing intelligence:</strong> quantify negotiated rate variance for high-cost oncology drugs.</li>
+                    <li><strong>Benchmarking:</strong> compare rate distributions across billing codes and provider references.</li>
+                    <li><strong>Outlier detection:</strong> flag unusual rates that may signal contracting anomalies or data quality issues.</li>
+                    <li><strong>Data product foundation:</strong> create a repeatable extraction pattern for future payors or code sets.</li>
+                </ul>
+                </div>
+
+                <!-- WHO THIS WAS FOR -->
+                <div class="case-study-section">
+                <h3>Who This Was For</h3>
+                <p>
+                    This project is relevant to healthcare analytics and finance stakeholders who need reimbursement transparency, including:
+                </p>
+                <ul>
+                    <li>Provider revenue cycle and contracting teams</li>
+                    <li>Health system finance and strategic sourcing leaders</li>
+                    <li>Analysts investigating negotiated rate variation for high-cost drugs</li>
+                    <li>Data engineering teams building transparency pipelines from CMS MRF files</li>
+                </ul>
+                </div>
+
+                <!-- TECHNICAL NOTES -->
+                <div class="case-study-section">
+                <h3>Technical Notes</h3>
+                <ul>
+                    <li><strong>Languages:</strong> Python</li>
+                    <li><strong>Parsing:</strong> <code>ijson</code> for streaming JSON</li>
+                    <li><strong>Dataframes:</strong> pandas for tabular outputs</li>
+                    <li><strong>Output artifacts:</strong> flattened index inventory CSV and normalized rate rows</li>
+                    <li><strong>Key fields:</strong> reporting entity metadata, plan identifiers, file URL, provider reference, NPI lookup, billing code, negotiated rate</li>
+                </ul>
+                <p>
+                    The pipeline emphasizes reliability and scale: index discovery is repeatable, and rate extraction is memory-safe for very large MRFs.
+                </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Brittany Justice</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

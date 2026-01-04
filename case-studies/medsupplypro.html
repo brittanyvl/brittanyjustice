@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MedSupplyPro - A privacy-first, offline Android application for medical inventory tracking.">
+    <title>MedSupplyPro | Brittany Justice</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Brittany Justice</a>
+            <ul class="nav-menu">
+                <li><a href="../about.html" class="nav-link">About</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">MedSupplyPro</h1>
+                <p class="page-subtitle">Privacy-First Medical Inventory Tracking</p>
+            </div>
+        </section>
+
+        <section class="case-study-page">
+            <div class="container">
+                <a href="/#case-studies" class="back-link">Back to Case Studies</a>
+
+                <p class="tagline">
+                A privacy-first, offline Android application for medical inventory tracking built for solo providers and mobile practices.
+                </p>
+
+                <!-- OVERVIEW -->
+                <div class="case-study-section">
+                <h3>Overview</h3>
+                <p>
+                    MedSupplyPro is a lightweight Android application designed to help solo healthcare providers manage medical
+                    inventory without the overhead of cloud systems, subscriptions, or complex enterprise software.
+                    It was built for practitioners such as RNs, NPs, PAs, chiropractors, and mobile IV operators who need
+                    practical inventory tracking that works anywhere, even without an internet connection.
+                </p>
+                <p>
+                    The app runs entirely offline, stores all data locally on the device, and requires no accounts or logins.
+                    Its goal is to reduce operational friction while preserving privacy, simplicity, and control.
+                </p>
+                </div>
+
+                <!-- CONTEXT / RISK -->
+                <div class="case-study-section">
+                <h3>Context / Risk</h3>
+                <p>
+                    Many small healthcare practices still rely on spreadsheets, paper logs, or ad hoc systems to manage medical
+                    supplies. These approaches are error-prone and make it difficult to answer basic operational questions:
+                    what is in stock, where it is stored, what is expiring, and what is being wasted.
+                </p>
+                <p>
+                    Cloud-based inventory platforms often introduce new problems for small operators: recurring costs,
+                    account management, internet dependency, and uncertainty about how sensitive data is stored or shared.
+                    For mobile practices and solo providers, those tradeoffs are often unacceptable.
+                </p>
+                </div>
+
+                <!-- THE PROBLEM -->
+                <div class="case-study-section">
+                <h3>The Problem</h3>
+                <p>
+                    Solo providers need inventory visibility without enterprise complexity. Specifically, they need a system that:
+                </p>
+                <ul>
+                    <li>Works offline in mobile or low-connectivity environments</li>
+                    <li>Does not require logins, accounts, or subscriptions</li>
+                    <li>Keeps all data private and under the provider's control</li>
+                    <li>Is simple enough to use daily without training</li>
+                    <li>Supports basic reporting on usage, waste, and inventory value</li>
+                </ul>
+                <p>
+                    Existing tools typically optimize for large organizations, not for individual practitioners running lean operations.
+                </p>
+                </div>
+
+                <!-- WHY EXISTING APPROACHES FAILED -->
+                <div class="case-study-section">
+                <h3>Why Existing Approaches Failed</h3>
+                <p>
+                    Spreadsheets and pen-and-paper logs are flexible but fragile: they drift out of date, are hard to search,
+                    and provide little insight into waste or usage patterns. On the other end of the spectrum, cloud-based
+                    inventory systems impose cost, connectivity, and data-sharing requirements that many solo providers do not want.
+                </p>
+                <p>
+                    MedSupplyPro was designed to sit deliberately between those extremes: more structured and reliable than a spreadsheet,
+                    but far simpler and more private than enterprise SaaS tools.
+                </p>
+                </div>
+
+                <!-- SYSTEM DESIGN -->
+                <div class="case-study-section">
+                <h3>System Design</h3>
+                <p>
+                    MedSupplyPro is a native Android application built with a focus on durability, simplicity, and offline-first behavior.
+                    All application logic and data storage live on the device, with no external network dependencies.
+                </p>
+
+                <h4>Design Principles</h4>
+                <ul>
+                    <li><strong>Offline-first:</strong> the app functions fully without internet access.</li>
+                    <li><strong>Privacy by design:</strong> no accounts, no tracking, no external data storage.</li>
+                    <li><strong>Low cognitive load:</strong> workflows mirror how providers actually handle supplies.</li>
+                    <li><strong>Right-sized:</strong> supports essential inventory needs without unnecessary features.</li>
+                </ul>
+
+                <h4>Data Model & Workflow</h4>
+                <ul>
+                    <li>Catalog of drugs and medical supplies</li>
+                    <li>Custom locations and storage areas</li>
+                    <li>Shipments as the unit of inventory intake</li>
+                    <li>Generated inventory records tied to shipments</li>
+                    <li>Explicit logging of usage and waste</li>
+                    <li>Reporting views summarizing inventory value and waste</li>
+                </ul>
+                </div>
+
+                <!-- FEATURES -->
+                <div class="case-study-section">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Catalog management:</strong> define preferred drugs and medical supplies once.</li>
+                    <li><strong>Custom storage locations:</strong> model how inventory is physically stored.</li>
+                    <li><strong>Shipment tracking:</strong> receive inventory as shipments and generate stock automatically.</li>
+                    <li><strong>Inventory search:</strong> quickly find items currently in stock.</li>
+                    <li><strong>Inventory valuation:</strong> understand what supplies are worth at any moment.</li>
+                    <li><strong>Waste & usage reporting:</strong> track unconsumed products and loss.</li>
+                </ul>
+                </div>
+
+                <!-- PRODUCT VIEWS / SCREENSHOTS -->
+                <div class="case-study-section">
+                <h3>Product Views</h3>
+                <p>
+                    These placeholders represent the primary user-facing screens of the MedSupplyPro application.
+                </p>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">App Home / Inventory Overview</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    High-level view of inventory across locations, designed for quick checks before or during patient care.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Catalog Management</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Define and manage drugs and medical supplies once, then reuse them consistently across shipments and inventory.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Shipment Intake</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Record incoming shipments and automatically generate inventory tied to locations and storage units.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Waste & Usage Reporting</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Report on wasted and consumed items to understand usage patterns and identify loss.
+                    </p>
+                </div>
+                </div>
+
+                <!-- DECISIONS ENABLED -->
+                <div class="case-study-section">
+                <h3>Decisions Enabled</h3>
+                <ul>
+                    <li><strong>Day-to-day operations:</strong> know what supplies are available before appointments.</li>
+                    <li><strong>Reordering:</strong> identify when inventory is running low without manual counts.</li>
+                    <li><strong>Waste reduction:</strong> see which items are expiring or going unused.</li>
+                    <li><strong>Cost awareness:</strong> understand inventory value tied up on the shelf.</li>
+                </ul>
+                </div>
+
+                <!-- WHO THIS WAS FOR -->
+                <div class="case-study-section">
+                <h3>Who This Was For</h3>
+                <p>
+                    MedSupplyPro was built for independent healthcare operators who manage their own supplies, including:
+                </p>
+                <ul>
+                    <li>Mobile IV therapy providers</li>
+                    <li>Med spa owners</li>
+                    <li>Solo or small-group clinics</li>
+                    <li>Nurse-led and provider-owned practices</li>
+                </ul>
+                </div>
+
+                <!-- ROADMAP -->
+                <div class="case-study-section">
+                <h3>Roadmap</h3>
+                <ul>
+                    <li>Export to Excel for reporting and backup</li>
+                    <li>Enhanced analytics and summaries</li>
+                    <li>Expiration and BUD alerts</li>
+                    <li>Barcode scanning for faster lookup</li>
+                </ul>
+                </div>
+
+                <!-- TECHNICAL NOTES -->
+                <div class="case-study-section">
+                <h3>Technical Notes</h3>
+                <p>
+                    MedSupplyPro was developed as a capstone project and implemented as a native Android application with no third-party services.
+                </p>
+                <ul>
+                    <li><strong>Platform:</strong> Android (API 26+)</li>
+                    <li><strong>Language:</strong> Java</li>
+                    <li><strong>Persistence:</strong> SQLite using Room ORM</li>
+                    <li><strong>Architecture:</strong> traditional View-based UI (not Jetpack Compose)</li>
+                    <li><strong>Storage:</strong> internal app storage for secure data isolation</li>
+                    <li><strong>Privacy:</strong> no analytics, no logins, no network calls</li>
+                </ul>
+                <p>
+                    The application includes clear user-facing disclaimers and was intentionally designed to remain simple, transparent,
+                    and maintainable.
+                </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Brittany Justice</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

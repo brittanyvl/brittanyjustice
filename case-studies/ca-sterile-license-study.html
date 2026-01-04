@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="California Sterile License Study - Turning a fragmented licensing portal into a searchable, enriched directory and market analysis.">
+    <title>California Sterile License Study | Brittany Justice</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Brittany Justice</a>
+            <ul class="nav-menu">
+                <li><a href="../about.html" class="nav-link">About</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">California Sterile License Study</h1>
+                <p class="page-subtitle">2024 Market Analysis of Licensed Sterile Compounders</p>
+            </div>
+        </section>
+
+        <section class="case-study-page">
+            <div class="container">
+                <a href="/#case-studies" class="back-link">Back to Case Studies</a>
+
+                <p class="tagline">
+                Turning a fragmented licensing portal into a searchable, enriched directory and market analysis of California sterile compounding capacity.
+                </p>
+
+                <!-- OVERVIEW -->
+                <div class="case-study-section">
+                <h3>Overview</h3>
+                <p>
+                    In 2024, I built an interactive research application that scraped the California Board of Pharmacy license verification portal to collect every active
+                    sterile compounding license, enriched each record using publicly available information, and delivered both (1) a searchable directory for safer sourcing and
+                    (2) an analytical report on California's sterile compounding market structure.
+                </p>
+                <p>
+                    The outcome is a decision-ready dataset and application that helps providers, procurement teams, and analysts answer a deceptively hard question:
+                    <strong>"Who is actually licensed to provide sterile compounded drugs in California, and what can they do?"</strong>
+                </p>
+                </div>
+
+                <!-- CONTEXT / RISK -->
+                <div class="case-study-section">
+                <h3>Context / Risk</h3>
+                <p>
+                    Sterile compounding supports critical therapies such as injections, infusions, and ophthalmic preparations. When legitimate access is limited,
+                    patients and providers face pressure to take shortcuts: sourcing from unsafe channels, purchasing unapproved chemicals, or rationing expired supplies.
+                    These behaviors increase patient harm and create legal and regulatory risk.
+                </p>
+                <p>
+                    California is a high-demand market with a large population, but sterile access is constrained. The public licensing data exists,
+                    yet it is not packaged in a way that supports real-world sourcing, oversight, or market understanding.
+                </p>
+                </div>
+
+                <!-- THE PROBLEM -->
+                <div class="case-study-section">
+                <h3>The Problem</h3>
+                <p>
+                    Patients, providers, and sourcing teams must navigate a patchwork of state licensing portals to identify eligible sterile compounders.
+                    Even within a single state, the information is difficult to use operationally.
+                </p>
+                <ul>
+                    <li><strong>Discovery is hard:</strong> the licensing portal is not designed for targeted sourcing (specialty, condition, service type).</li>
+                    <li><strong>Capabilities are missing:</strong> licensure alone does not explain what the pharmacy actually compounds or who they serve.</li>
+                    <li><strong>Market visibility is poor:</strong> it is difficult to quantify capacity constraints or geographic distribution.</li>
+                    <li><strong>Procurement decisions suffer:</strong> teams waste time on irrelevant listings and still miss viable options.</li>
+                </ul>
+                </div>
+
+                <!-- WHY EXISTING APPROACHES FAILED -->
+                <div class="case-study-section">
+                <h3>Why Existing Approaches Failed</h3>
+                <p>
+                    The licensing portal is optimized for one-off verification, not for sourcing workflows or market analysis. Users can look up a facility,
+                    but they cannot easily:
+                </p>
+                <ul>
+                    <li>Search across the market by service capability, specialty, or condition</li>
+                    <li>Separate patient-specific (503A-style purchasing) from bulk in-office (503B outsourcer) options</li>
+                    <li>Understand what kinds of facilities hold sterile privileges (hospitals vs traditional pharmacies)</li>
+                    <li>Analyze expiration risk and renewal cycles</li>
+                    <li>Map geographic access and distribution</li>
+                </ul>
+                <p>
+                    Without data extraction and enrichment, the licensing data remains "public" but not truly usable.
+                </p>
+                </div>
+
+                <!-- SYSTEM DESIGN -->
+                <div class="case-study-section">
+                <h3>System Design</h3>
+                <p>
+                    I designed the application as a combined <strong>directory + analysis report</strong>. The pipeline begins with extraction of California sterile compounding
+                    licenses and then enriches each listing using public web information to identify capabilities and relevance.
+                </p>
+
+                <h4>Data Collection</h4>
+                <ul>
+                    <li>Scraped the California Board of Pharmacy license verification portal to collect sterile licenses</li>
+                    <li>Standardized core fields (license type, facility name, address, city/county/zip, expiration dates)</li>
+                    <li>Geocoded records (LAT/LONG) to enable mapping and access analysis</li>
+                </ul>
+
+                <h4>Enrichment Layer (Differentiator)</h4>
+                <p>
+                    The licensing portal does not describe what facilities actually do. I enriched the dataset using publicly available information
+                    (websites, social profiles, and online presence) to classify and make the directory searchable by real-world capability.
+                </p>
+                <ul>
+                    <li><strong>Facility type classification:</strong> medical facility, infusion center, sterile compounding pharmacy, veterinary-only, research center</li>
+                    <li><strong>Service capability taxonomy:</strong> specialties, conditions served</li>
+                    <li><strong>Affiliations:</strong> claimed accreditations, associations, industry signals</li>
+                    <li><strong>Purchasing style signals:</strong> patient-specific vs bulk in-office sourcing; 503B outsourcer indicator where applicable</li>
+                </ul>
+
+                <h4>Product Experience</h4>
+                <ul>
+                    <li>Interactive filters for facility type, city, specialty, condition, and accreditations</li>
+                    <li>Searchable results table with export/download for operational use</li>
+                    <li>Analysis tab with narrative + visualizations (license types, facility distribution, geography, expirations)</li>
+                </ul>
+                </div>
+
+                <!-- PRODUCT VIEWS / SCREENSHOTS -->
+                <div class="case-study-section">
+                <h3>Product Views</h3>
+                <p>
+                    The following screenshots show how the application supports both sourcing workflows (directory/search) and strategic understanding (market analysis).
+                </p>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Search Experience (Sidebar Filters + Results Table)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Sidebar-driven search across licensed sterile compounders by pharmacy type (patient-specific vs bulk in-office), facility type, city, specialty,
+                    condition, and accreditations. Results are shown in an interactive table with export/download for operational use.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">License Analysis Overview (Charts + Narrative)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Analysis tab combining explanatory narrative with distribution charts (license types, facility categories, and 503A vs 503B-style sourcing).
+                    Designed to be readable by non-technical leaders while still audit-friendly for analysts.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Geography View (US Heatmap + California Facility Map)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Visualizes where licensed facilities are located (inside and outside California) and maps in-state access. This supports practical sourcing decisions
+                    for services that require proximity, not shipping.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">License Expiration Forecast (Stacked Area + Expiration Table)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Expiration trend analysis to anticipate renewal cycles and potential turnover risk. Includes a filtered expiration table to support targeted outreach and monitoring.
+                    </p>
+                </div>
+
+                <div class="screenshot-block">
+                    <div class="screenshot-placeholder">
+                    <span class="placeholder-label">Downloadable Clean Dataset (Directory Export)</span>
+                    </div>
+                    <p class="screenshot-caption">
+                    Cleaned, enriched dataset export for downstream analysis. Supports procurement teams and analysts who need a reliable starting point without re-scraping or manual cleanup.
+                    </p>
+                </div>
+                </div>
+
+                <!-- DECISIONS ENABLED -->
+                <div class="case-study-section">
+                <h3>Decisions Enabled</h3>
+                <ul>
+                    <li><strong>Safer sourcing:</strong> quickly identify which facilities are actually licensed for sterile compounding and filter to relevant capabilities</li>
+                    <li><strong>Bulk vs patient-specific purchasing clarity:</strong> differentiate sourcing paths and constraints for in-office administration vs patient prescriptions</li>
+                    <li><strong>Market structure visibility:</strong> quantify what types of facilities hold sterile privileges (not just "pharmacies")</li>
+                    <li><strong>Geographic access insight:</strong> identify coverage gaps and proximity constraints for in-person sterile services</li>
+                    <li><strong>Renewal/turnover planning:</strong> anticipate license expirations and identify periods of high renewal volume</li>
+                    <li><strong>Operational handoff:</strong> export a cleaned list for procurement workflows, outreach, or internal tracking</li>
+                </ul>
+                </div>
+
+                <!-- WHO THIS WAS FOR -->
+                <div class="case-study-section">
+                <h3>Who This Was For</h3>
+                <p>
+                    This project was built for stakeholders who need to source sterile compounded medications safely and legally, including:
+                </p>
+                <ul>
+                    <li>Clinic operators and medical practices purchasing sterile compounds</li>
+                    <li>Procurement and supply chain teams supporting sterile sourcing</li>
+                    <li>Pharmacy operations leaders monitoring sterile compounding access</li>
+                    <li>Analysts evaluating market capacity, access, and licensing constraints</li>
+                </ul>
+                </div>
+
+                <!-- WHY THIS MATTERS -->
+                <div class="case-study-section">
+                <h3>Why This Matters</h3>
+                <p>
+                    Licensing data is technically public, but it is not packaged for real-world decision-making. This project shows how to convert a single-state licensing portal into a
+                    decision-ready directory with meaningful classification, searchable capability signals, and analysis that explains the market in plain language.
+                </p>
+                <p>
+                    It also serves as a prototype for a broader vision: consolidating sterile compounding licensing across all 50 states into a unified directory that reduces friction,
+                    improves sourcing safety, and makes regulated markets legible.
+                </p>
+                </div>
+
+                <!-- TECHNICAL NOTES -->
+                <div class="case-study-section">
+                <h3>Technical Notes</h3>
+                <p>
+                    The application was implemented as an interactive Streamlit product with a pandas-based analytics layer and Plotly visualizations, backed by a cleaned and enriched CSV dataset.
+                    Key implementation details include:
+                </p>
+                <ul>
+                    <li>Reusable filtering logic across multiple dimensions (facility type, geography, specialty, condition, accreditations)</li>
+                    <li>Term cleaning and normalization for searchable multi-value fields (specialties, conditions, accreditations)</li>
+                    <li>Geospatial visualizations using LAT/LONG for map-based exploration</li>
+                    <li>Download/export workflows to support operational use cases</li>
+                </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Brittany Justice</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

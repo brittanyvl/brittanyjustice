@@ -573,22 +573,9 @@ img { max-width: 100%; display: block; }
     border-radius: var(--radius);
     border: 1px solid var(--color-neutral-200);
     font-size: var(--text-sm);
-    color: var(--color-neutral-700);
+    font-weight: 600;
+    color: var(--color-primary-500);
     line-height: 1.5;
-    position: relative;
-    padding-left: var(--space-6);
-}
-
-.principle::before {
-    content: '';
-    position: absolute;
-    left: var(--space-4);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background: var(--color-primary-500);
-    border-radius: 50%;
 }
 
 /* ============================================
@@ -877,5 +864,300 @@ img { max-width: 100%; display: block; }
 @media (min-width: 769px) and (max-width: 1024px) {
     .pillars {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   Carousel Component
+   ============================================ */
+.carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-container {
+    overflow: hidden;
+    margin: 0 calc(-1 * var(--space-5));
+    padding: 0 var(--space-5);
+}
+
+.carousel-track {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: var(--space-2) 0;
+    cursor: grab;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track.dragging {
+    scroll-behavior: auto;
+    cursor: grabbing;
+}
+
+.carousel-track > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+/* Carousel card sizing */
+.carousel-track .pillar {
+    width: 300px;
+    min-width: 300px;
+}
+
+.carousel-track .case-study-card {
+    width: 320px;
+    min-width: 320px;
+}
+
+.carousel-track .thinking-card {
+    width: 340px;
+    min-width: 340px;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+.carousel-arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition);
+    color: var(--color-neutral-600);
+}
+
+.carousel-arrow:hover {
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-700);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.carousel-arrow:disabled:hover {
+    background: var(--color-white);
+    border-color: var(--color-neutral-200);
+    color: var(--color-neutral-600);
+}
+
+.carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ============================================
+   Filter Pills
+   ============================================ */
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+.filter-pill {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    background: var(--color-white);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all var(--transition);
+    color: var(--color-neutral-600);
+}
+
+.filter-pill:hover {
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-700);
+}
+
+.filter-pill.active {
+    background: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+    color: var(--color-white);
+}
+
+.filter-pill.active:hover {
+    background: var(--color-primary-800);
+    border-color: var(--color-primary-800);
+}
+
+/* ============================================
+   Thinking Cards (How I Think Carousel)
+   ============================================ */
+.thinking-card {
+    padding: var(--space-5);
+    background: var(--color-white);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+
+.thinking-card:hover {
+    border-color: var(--color-primary-300);
+    box-shadow: var(--shadow-md);
+}
+
+.thinking-card h3 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-neutral-900);
+    margin-bottom: var(--space-3);
+}
+
+.thinking-card p {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-2);
+}
+
+.thinking-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Case Study Card Updates (for carousel)
+   ============================================ */
+.case-study-card.hidden {
+    display: none;
+}
+
+.case-study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin-top: var(--space-3);
+}
+
+.case-study-tags .tag {
+    font-size: var(--text-xs);
+    color: var(--color-neutral-500);
+    background: var(--color-neutral-100);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius);
+}
+
+/* ============================================
+   Case Study Individual Page
+   ============================================ */
+.case-study-page {
+    padding: var(--space-10) 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-primary-700);
+    margin-bottom: var(--space-6);
+    transition: color var(--transition);
+}
+
+.back-link:hover {
+    color: var(--color-primary-500);
+}
+
+.back-link::before {
+    content: '←';
+}
+
+/* Screenshot placeholders for case study pages */
+.screenshot-block {
+    margin: var(--space-5) 0;
+}
+
+.screenshot-placeholder {
+    background: var(--color-neutral-100);
+    border: 1px dashed var(--color-neutral-300);
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-label {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    font-weight: 500;
+}
+
+.screenshot-caption {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-500);
+    margin-top: var(--space-2);
+    font-style: italic;
+}
+
+/* Case study section heading improvements */
+.case-study-section h4 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-neutral-800);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+
+/* ============================================
+   Mobile Carousel Adjustments
+   ============================================ */
+@media (max-width: 768px) {
+    .carousel-container {
+        margin: 0 calc(-1 * var(--space-5));
+        padding: 0 var(--space-5);
+    }
+
+    .carousel-track .pillar,
+    .carousel-track .case-study-card,
+    .carousel-track .thinking-card {
+        width: 280px;
+        min-width: 280px;
+    }
+
+    .carousel-controls {
+        justify-content: center;
+    }
+
+    .filter-pills {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--space-2);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .filter-pills::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-pill {
+        white-space: nowrap;
     }
 }

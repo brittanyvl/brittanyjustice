@@ -18,10 +18,7 @@
         <div class="nav-container">
             <a href="/" class="nav-logo">Brittany Justice</a>
             <ul class="nav-menu">
-                <li><a href="work.html" class="nav-link">Work</a></li>
-                <li><a href="how-i-think.html" class="nav-link">How I Think</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -37,69 +34,213 @@
             <div class="container">
                 <span class="hero-eyebrow">Principal Pharmacy Intelligence & Optimization Engineer</span>
                 <h1 class="hero-headline">Decision-grade intelligence for compound and sterile drug markets</h1>
-                <p class="hero-subheadline">I design intelligence and optimization systems for compound  drug procurement, where pricing, compliance, and operations intersect.</p>
+                <p class="hero-subheadline">I design intelligence and optimization systems for compound  drug procurement: where pricing, compliance, and operations intersect.</p>
                 <div class="hero-meta">
                     <span>6 years in sterile drug procurement</span>
                     <span>GPO, Health System, and Telehealth experience</span>
                     <span>Full-stack data & optimization</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="work.html" class="btn btn-primary">View Case Studies</a>
-                    <a href="how-i-think.html" class="btn btn-ghost">How I Think</a>
+                    <a href="#case-studies" class="btn btn-primary">View Case Studies</a>
+                    <a href="#how-i-think" class="btn btn-ghost">How I Think</a>
                 </div>
             </div>
         </section>
 
-        <!-- What I Work On Section -->
+        <!-- What I Work On Section - Carousel -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
                     <p class="section-label">Focus Areas</p>
                     <h2 class="section-title">What I work on</h2>
                 </div>
-                <div class="pillars">
-                    <div class="pillar">
-                        <div class="pillar-icon">MI</div>
-                        <h3 class="pillar-title">Market Intelligence</h3>
-                        <ul class="pillar-list">
-                            <li>Supplier and pharmacy landscape insights</li>
-                            <li>Licensing, accreditation, and capability intelligence</li>
-                            <li>Competitive positioning and benchmarking</li>
-                        </ul>
+                <div class="carousel" id="focus-areas-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="pillar">
+                                <div class="pillar-icon">MI</div>
+                                <h3 class="pillar-title">Market Intelligence</h3>
+                                <ul class="pillar-list">
+                                    <li>Supplier and pharmacy landscape insights</li>
+                                    <li>Licensing, accreditation, and capability intelligence</li>
+                                    <li>Competitive positioning and benchmarking</li>
+                                </ul>
+                            </div>
+                            <div class="pillar">
+                                <div class="pillar-icon">OS</div>
+                                <h3 class="pillar-title">Optimization & Strategy</h3>
+                                <ul class="pillar-list">
+                                    <li>Drug sourcing and formulary optimization</li>
+                                    <li>Pricing and contract tradeoff modeling</li>
+                                    <li>Substitution and shortage response planning</li>
+                                </ul>
+                            </div>
+                            <div class="pillar">
+                                <div class="pillar-icon">DS</div>
+                                <h3 class="pillar-title">Decision Systems</h3>
+                                <ul class="pillar-list">
+                                    <li>Ingesting messy regulatory, pricing, and operational data</li>
+                                    <li>Optimization under real-world constraints</li>
+                                    <li>Decision support for sourcing and risk management</li>
+                                </ul>
+                            </div>
+                            <div class="pillar">
+                                <div class="pillar-icon">BI</div>
+                                <h3 class="pillar-title">Business Intelligence</h3>
+                                <ul class="pillar-list">
+                                    <li>Build Data Warehouses, Pipelines & Integrations</li>
+                                    <li>Dimensional modeling & metrics</li>
+                                    <li>Interactive dashboards & data apps</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pillar">
-                        <div class="pillar-icon">OS</div>
-                        <h3 class="pillar-title">Optimization & Strategy</h3>
-                        <ul class="pillar-list">
-                            <li>Drug sourcing and formulary optimization</li>
-                            <li>Pricing and contract tradeoff modeling</li>
-                            <li>Substitution and shortage response planning</li>
-                        </ul>
+                    <div class="carousel-controls">
+                        <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="carousel-arrow carousel-arrow-next" aria-label="Next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="pillar">
-                        <div class="pillar-icon">DS</div>
-                        <h3 class="pillar-title">Decision Systems</h3>
-                        <ul class="pillar-list">
-                            <li>Ingesting messy regulatory, pricing, and operational data</li>
-                            <li>Optimization under real-world constraints</li>
-                            <li>Decision support for sourcing and risk management</li>
-                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section - Filterable Carousel -->
+        <section class="section section-light" id="case-studies">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Portfolio</p>
+                    <h2 class="section-title">Selected Systems & Case Studies</h2>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="filter-pills">
+                    <button class="filter-pill active" data-tag="all">All</button>
+                    <button class="filter-pill" data-tag="Web Scraping">Web Scraping</button>
+                    <button class="filter-pill" data-tag="Compliance">Compliance</button>
+                    <button class="filter-pill" data-tag="Data Modeling">Data Modeling</button>
+                    <button class="filter-pill" data-tag="Market Intelligence">Market Intelligence</button>
+                    <button class="filter-pill" data-tag="Dashboarding">Dashboarding</button>
+                    <button class="filter-pill" data-tag="Compound Pharmacy">Compound Pharmacy</button>
+                    <button class="filter-pill" data-tag="Sourcing">Sourcing</button>
+                    <button class="filter-pill" data-tag="Procurement">Procurement</button>
+                    <button class="filter-pill" data-tag="Custom Data Applications">Custom Data Applications</button>
+                    <button class="filter-pill" data-tag="Web Development">Web Development</button>
+                    <button class="filter-pill" data-tag="Pricing Evaluation">Pricing Evaluation</button>
+                    <button class="filter-pill" data-tag="Data Pipelines">Data Pipelines</button>
+                    <button class="filter-pill" data-tag="Reimbursement">Reimbursement</button>
+                    <button class="filter-pill" data-tag="Custom Mobile Applications">Custom Mobile Applications</button>
+                    <button class="filter-pill" data-tag="Inventory Management">Inventory Management</button>
+                    <button class="filter-pill" data-tag="Data Engineering">Data Engineering</button>
+                    <button class="filter-pill" data-tag="Data Validation">Data Validation</button>
+                </div>
+
+                <div class="carousel" id="case-studies-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <!-- CompoundIQ -->
+                            <article class="case-study-card" data-tags="Web Scraping, Compliance, Data Modeling, Market Intelligence, Dashboarding, Compound Pharmacy, Sourcing">
+                                <span class="case-study-tag">Compliance Monitoring & Market Intelligence</span>
+                                <h3 class="case-study-title">CompoundIQ</h3>
+                                <p class="case-study-description">503B facility lifecycle tracking from a single FDA spreadsheet, modeled into history you can monitor, query, and trust.</p>
+                                <a href="case-studies/compoundiq.html" class="case-study-link">View case study</a>
+                                <div class="case-study-tags">
+                                    <span class="tag">Web Scraping</span>
+                                    <span class="tag">Compliance</span>
+                                    <span class="tag">Data Modeling</span>
+                                </div>
+                            </article>
+
+                            <!-- California Sterile License Study -->
+                            <article class="case-study-card" data-tags="Web Scraping, Compliance, Market Intelligence, Compound Pharmacy, Sourcing">
+                                <span class="case-study-tag">Market Intelligence</span>
+                                <h3 class="case-study-title">California Sterile License Study (2024)</h3>
+                                <p class="case-study-description">Turning a fragmented licensing portal into a searchable, enriched directory and market analysis of California sterile compounding capacity.</p>
+                                <a href="case-studies/ca-sterile-license-study.html" class="case-study-link">View case study</a>
+                                <div class="case-study-tags">
+                                    <span class="tag">Web Scraping</span>
+                                    <span class="tag">Market Intelligence</span>
+                                    <span class="tag">Sourcing</span>
+                                </div>
+                            </article>
+
+                            <!-- SterileCalc -->
+                            <article class="case-study-card" data-tags="Procurement, Custom Data Applications, Compound Pharmacy, Web Development, Pricing Evaluation">
+                                <span class="case-study-tag">Procurement Tool</span>
+                                <h3 class="case-study-title">SterileCalc</h3>
+                                <p class="case-study-description">A lightweight procurement calculator for sterile drugs that turns messy dosing, vial, and compliance rules into fast, defensible purchasing math.</p>
+                                <a href="case-studies/sterilecalc.html" class="case-study-link">View case study</a>
+                                <div class="case-study-tags">
+                                    <span class="tag">Procurement</span>
+                                    <span class="tag">Web Development</span>
+                                    <span class="tag">Pricing Evaluation</span>
+                                </div>
+                            </article>
+
+                            <!-- CMS BCBS Oncology -->
+                            <article class="case-study-card" data-tags="Data Pipelines, Market Intelligence, Reimbursement, Procurement">
+                                <span class="case-study-tag">Data Pipeline</span>
+                                <h3 class="case-study-title">CMS BCBS Oncology J-Code Payor Rate Pipeline</h3>
+                                <p class="case-study-description">Turning CMS payor machine-readable files into analyzable pricing intelligence for the top oncology J-codes.</p>
+                                <a href="case-studies/cms-bcbs-oncology.html" class="case-study-link">View case study</a>
+                                <div class="case-study-tags">
+                                    <span class="tag">Data Pipelines</span>
+                                    <span class="tag">Market Intelligence</span>
+                                    <span class="tag">Reimbursement</span>
+                                </div>
+                            </article>
+
+                            <!-- MedSupplyPro -->
+                            <article class="case-study-card" data-tags="Custom Mobile Applications, Inventory Management, Procurement">
+                                <span class="case-study-tag">Mobile Application</span>
+                                <h3 class="case-study-title">MedSupplyPro</h3>
+                                <p class="case-study-description">A privacy-first, offline Android application for medical inventory tracking built for solo providers and mobile practices.</p>
+                                <a href="case-studies/medsupplypro.html" class="case-study-link">View case study</a>
+                                <div class="case-study-tags">
+                                    <span class="tag">Mobile App</span>
+                                    <span class="tag">Inventory Management</span>
+                                    <span class="tag">Procurement</span>
+                                </div>
+                            </article>
+
+                            <!-- Data Doctor -->
+                            <article class="case-study-card" data-tags="Custom Data Applications, Data Engineering, Data Validation">
+                                <span class="case-study-tag">Data Quality Tool</span>
+                                <h3 class="case-study-title">Data Doctor</h3>
+                                <p class="case-study-description">A privacy-first, browser-based tool for diagnosing and fixing spreadsheet data quality—no accounts, no uploads to third parties.</p>
+                                <a href="case-studies/data-doctor.html" class="case-study-link">View case study</a>
+                                <div class="case-study-tags">
+                                    <span class="tag">Data Engineering</span>
+                                    <span class="tag">Data Validation</span>
+                                    <span class="tag">Custom Application</span>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                        <div class="pillar">
-                        <div class="pillar-icon">BI</div>
-                        <h3 class="pillar-title">Business Intelligence</h3>
-                        <ul class="pillar-list">
-                            <li>Build Data Warehouses, Pipelines & Integrations</li>
-                            <li>Dimensional modeling & metrics</li>
-                            <li>Interactive dashboards & data apps</li>
-                        </ul>
+                    <div class="carousel-controls">
+                        <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="carousel-arrow carousel-arrow-next" aria-label="Next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Why This Is Hard Section -->
-        <section class="section section-light">
+        <section class="section">
             <div class="container">
                 <div class="section-header">
                     <p class="section-label">The Challenge</p>
@@ -112,38 +253,61 @@
             </div>
         </section>
 
-        <!-- Featured Case Studies Section -->
-        <section class="section">
+        <!-- How I Think Section - Carousel -->
+        <section class="section section-light" id="how-i-think">
             <div class="container">
                 <div class="section-header">
-                    <p class="section-label">Portfolio</p>
-                    <h2 class="section-title">Selected Systems & Case Studies</h2>
+                    <p class="section-label">Philosophy</p>
+                    <h2 class="section-title">How I Think</h2>
                 </div>
-                <div class="case-studies">
-                    <article class="case-study-card">
-                        <span class="case-study-tag">Compliance Monitoring & Market Intelligence</span>
-                        <h3 class="case-study-title">503B Outsourcing Facility Registration & Regulatory Action Tracking </h3>
-                        <p class="case-study-description">Turning volatile regulatory disclosures into historical intelligence for procurement decisions.</p>
-                        <a href="work.html#503b-monitoring" class="case-study-link">View case study</a>
-                    </article>
-                    <article class="case-study-card">
-                        <span class="case-study-tag">Market Intelligence</span>
-                        <h3 class="case-study-title">Case Study Title</h3>
-                        <p class="case-study-description">One-sentence value statement describing the decision system and its impact.</p>
-                        <a href="work.html" class="case-study-link">View case study</a>
-                    </article>
-                    <article class="case-study-card">
-                        <span class="case-study-tag">Optimization</span>
-                        <h3 class="case-study-title">Case Study Title</h3>
-                        <p class="case-study-description">One-sentence value statement describing the decision system and its impact.</p>
-                        <a href="work.html" class="case-study-link">View case study</a>
-                    </article>
+                <div class="carousel" id="thinking-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="thinking-card">
+                                <h3>Data Quality and Validation</h3>
+                                <p>In regulated markets, data quality isn't a nice-to-have—it's the foundation of defensible decisions. I build validation into every layer of a system, not as an afterthought but as a core design principle.</p>
+                                <p>This means explicit data contracts, automated anomaly detection, and clear lineage from source to output.</p>
+                            </div>
+                            <div class="thinking-card">
+                                <h3>Guardrails for AI and Machine Learning</h3>
+                                <p>Machine learning has genuine applications in pharmacy analytics—demand forecasting, anomaly detection, entity resolution. But ML models in regulated environments require guardrails that most implementations lack.</p>
+                                <p>I'm skeptical of black-box predictions for high-stakes decisions. Models should be interpretable and validated against domain expertise.</p>
+                            </div>
+                            <div class="thinking-card">
+                                <h3>Human-in-the-Loop Systems</h3>
+                                <p>The best decision systems don't replace human judgment—they augment it. In procurement and compliance, context matters in ways that algorithms can't fully capture.</p>
+                                <p>I design systems that surface relevant information, flag anomalies, and suggest actions, but preserve space for expert override.</p>
+                            </div>
+                            <div class="thinking-card">
+                                <h3>Right-Sized Architecture</h3>
+                                <p>Not every problem needs a distributed data platform. Some of the most effective decision systems I've built run on surprisingly modest infrastructure because the architecture was matched to the actual requirements.</p>
+                                <p>Complexity should be earned, not assumed.</p>
+                            </div>
+                            <div class="thinking-card">
+                                <h3>Skepticism of Black-Box Systems</h3>
+                                <p>In healthcare procurement, decisions have real consequences—patient safety, regulatory compliance, financial exposure. Systems that can't explain their recommendations aren't trustworthy enough for these contexts.</p>
+                                <p>I build systems where every output can be traced to its inputs and where assumptions are explicit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="carousel-arrow carousel-arrow-next" aria-label="Next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- How I Approach This Work Section -->
-        <section class="section section-light">
+        <section class="section">
             <div class="container">
                 <div class="section-header">
                     <p class="section-label">Principles</p>
